@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title># template basic</title>
+</head>
+<body>
+    <h1> Template basic</h1>
+    <p> Welcome to the blog home page !</p>
+
+    <!-- single variable  -->
+     <p> Name : {{name}}</p> 
+     <!-- context ko name ho mathiko  -->
+
+      <p> Age : {{age}}</p> 
+      <!-- views dekhe aako variable ho age chae  -->
+
+
+      <!-- list lai access garne tarika  -->
+
+      <p> First Skill:{{skills.0}}</p>
+      <!-- yesle chae skills ko list bata euta matrae access garxa  -->
+       <p>Skill:{{skills}}</p>
+       <!-- yesle sabai skills lai access garxa  -->
+
+
+
+
+       <!-- accessing object attributes  -->
+        <p> User Name: {{user.name}}</p>
+
+        <p> User Age: {{user.age}}</p>
+
+
+
+        <!-- accessing in dictionary  -->
+
+        <h2> Blog Information</h2>
+        <p> Title:{{blog.title}}</p>
+
+        <p> Create At:{{blog.created_at}}</p>
+
+        <p>Content{{blog.content}}</p>
+        <!-- yo mathi ko lekhda b tag ne dekhinxa so -->
+
+        <p>Content{{blog.content|safe}}</p>
+
+        <!-- safe bhanne use bhako  -->
+
+        <!-- default value  -->
+
+        <P>default empty value:{{default_value| default:"No value provided"}}</P>
+
+        <P>default empty value:{{default_value| default_if_none:"No data"}}</P>
+
+
+
+        <!-- nested variable ko concept yaha xa  -->
+         
+
+</body>
+</html>
