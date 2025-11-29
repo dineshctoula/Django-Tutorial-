@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title># 2templates</title>
+</head>
+<body>
+    <h1> blog filter page</h1>
+  <!-- text filter  -->
+
+  <p><b>Title(Normal):</b>{{post.title}}</p>
+
+  <p><b>Uppercase:</b>{{post.title|upper}}</p>
+
+  <p><b>lowercase:</b>{{post.title|lower}}</p>
+
+
+  <p><b>Capital:</b>{{post.title|capfirst}}</p>
+
+
+  <p><b>Titlecase:</b>{{post.title|title}}</p>
+
+
+  <p><b>TruncateChar:</b>{{post.title|truncatechars:20}}</p>
+
+  <!-- trunchr ley chae 20 dekhe bahek ko character didaina  -->
+
+
+  <p><b>truncateword:</b>{{post.title|truncatewords:2}}</p>
+
+
+  <p><b>LineBreak:</b>{{post.title|linebreaks}}</p>
+  <hr>
+
+<!-- number filter  -->
+ <!-- add  -->
+ <p><b>Original Price:</b>{{post.price}}</p>
+
+ <p><b>Original Price(+5):</b>{{post.price|add:5}}</p>
+
+
+ <!-- divisionby example  -->
+ {% if post.number|divisibleby:2 %}
+    <p>{{ post.number }} is divisible by 2</p>
+{% else %}
+    <p>{{ post.number }} is not divisible by 2</p>
+{% endif %}
+
+
+<!-- list filter  -->
+
+    <p><b>First Tag:</b>{{post.tags|last}}</p>
+
+    <p><b>total Tag:</b>{{post.tags|length}}</p>
+
+    <p><b>slice(first 2):</b> {{ post.tags|slice:":2" }}</p>
+
+
+    <p><b>Join Tag:</b>{{post.tags|join:" "}}</p>
+
+    <hr>
+
+    <!-- yes/no and plurazation  -->
+     <p> Author Available?:{{post.author|yesno:"Yes,No,Maybe"}}</p>
+     <!-- none xa so Maybe aako ho 
+       -->
+
+
+      <p>Comments count: {{ post.comments_count }} Comment{{post.comments_count|pluralize}}</p>
+
+
+      <hr>
+
+      <!-- date and time filter  -->
+
+      <p><b> Created At:</b>{{ post.created_at}}</p>
+
+      <p><b> Formatted Date:</b>{{ post.created_at| date:"D d M Y"}}</p>
+
+
+      <p><b> Time Only:</b>{{ post.created_at| time:"H:i"}}</p>
+
+
+    <hr>
+
+    <!-- encoding and formatting  -->
+
+    <p><b>Title Encode</b>{{post.title|urlencode}}</p>
+
+
+    <p><b>Float Formate Example</b>{{123.4567891|floatformat:2}}</p>
+
+
+
+
+
+
+
+
+</body>
+</html>
