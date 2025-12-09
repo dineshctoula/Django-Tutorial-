@@ -1,0 +1,22 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: white;
+    text-align: center;
+    padding: 20px;
+
+}
+
+nav ul {
+    list-style: none;
+    background-color: maroon;
+    padding: 10px;
+}
+
+nav ul li a {
+    color: yellow;
+    text-decoration: none;
+}
+h1
+{
+    color: blue;
+}
