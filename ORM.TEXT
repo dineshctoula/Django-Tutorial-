@@ -1,0 +1,14 @@
+class Students(models.Model):
+    name=models.CharField()
+    age=models.IntegerField()
+
+
+
+
+
+
+    student=Students.objects.all()
+
+
+
+
