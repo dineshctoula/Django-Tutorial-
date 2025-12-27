@@ -1,3 +1,32 @@
 from django.db import models
 
 # Create your models here.
+class Student( models.Model):
+    name=models.CharField(max_length=100)
+    age=models.IntegerField()
+    city=models.CharField(max_length=100)
+
+
+
+    def __str__(self):
+        return self.name
+    
+
+
+
+
+class Profile(models.Model):
+    bio=models.TextField()
+    location=models.CharField(max_length=100)
+    birth_date=models.DateField(null=True, blank=True)
+    # null= true bhaneko chae khali xodey pane bhayo 
+
+    
+    # blank=true , bhaneko chae form can be submitted withotut this field 
+
+
+    def __str__(self):
+        return self.location
+    
+
+    # table ma S automatically lagxah . it is by default 
