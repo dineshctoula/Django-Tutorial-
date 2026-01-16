@@ -20,7 +20,8 @@ from django.urls import path,include
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('',include('todo.urls'), namespace='todo'),
+    path('', include(('todo.urls', 'todo'), namespace='todo')),
+
 
     # multiple urls ko same name huna sakxa so it is used to avoid confusion 
 ]
