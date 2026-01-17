@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Add</title>
+</head>
+<body>
+    <h2>Add students here</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <!-- form bhaneko chae tyo views ma bhako variable ho ane yo as a pargarph hunxa  -->
+         <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
