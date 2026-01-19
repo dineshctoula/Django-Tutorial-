@@ -1,4 +1,4 @@
-from django.shortcuts import render,get_object_or_404
+from django.shortcuts import render,get_object_or_404,redirect
 from .forms import StudentForm
 from .models import Student
 
@@ -39,3 +39,24 @@ def student_list(request):
 def student_detail(request,pk):
     student=get_object_or_404(Student, pk=pk)
     return render(request,'student_detail.html',{'student':student})
+
+
+
+
+def student_edit(request, pk):
+    student = get_object_or_404(Student, pk=pk)
+    # yedi student exist gardaina bhane 404 error aaucha
+
+    if request.method == 'POST':
+        form = StudentForm(request.POST, instance=student)
+        # request.POST = updated data
+        # instance=student = existing student update gar
+
+        if form.is_valid():
+            form.save()
+            return redirect('student_list')
+    else:
+        # GET request ma form lai existing data sanga load gar
+        form = StudentForm(instance=student)
+
+    return render(request, 'student_form.html', {'form': form})
