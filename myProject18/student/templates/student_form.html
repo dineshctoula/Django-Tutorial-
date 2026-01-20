@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Add</title>
+    <title>Student Add/Edit</title>
 </head>
 <body>
-    <h2>Add students here</h2>
+    <h2>Add students here or delete</h2>
     <form method="post">
         {% csrf_token %}
         {{form.as_p}}
